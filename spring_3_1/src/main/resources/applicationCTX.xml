@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Calculator 클래스로 calc 객체 생성 -->
+	<bean id="cal" class="com.lgy.spring_3_2.Calculator"></bean>
+
+	<bean id="mycalc" class="com.lgy.spring_3_2.MyCalculator">
+		<property name="calculator">
+			<ref bean="cal" />
+		</property>
+		<!-- setFirstNum 호출 -->
+		<property name="firstNum" value="10"></property>
+		<property name="secondNum" value="2"></property>
+	</bean>
+
+</beans>
