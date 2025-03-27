@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="circle" class="com.lgy.spring_ex3_1.Circle"></bean>
+	<!-- id mycircle로 MyCircle 객체를 생성하여 등록 -->
+	<bean id="mycircle" class="com.lgy.spring_ex3_1.MyCircle">
+	<!-- 
+		의존성 주입
+		circle 프로퍼티에 circle 빈을 참조하여 setCircle() 메소드를 호출 
+		ref의 circle이 
+		<bean id="circle" class="com.lgy.spring_ex3_1.Circle"></bean>를 불러와
+		객체 생성
+	-->
+		<property name="circle">
+			<ref bean="circle" />
+		</property>
+	
+	<!-- set property -->
+		<property name="radius" value="10"></property>
+		
+	</bean>
+
+
+</beans>

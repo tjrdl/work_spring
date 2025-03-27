@@ -8,6 +8,14 @@
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/resources/applicationCTX.xml</config>
+		<config>src/main/resources/circleCTX.xml</config>
+		<config>src/main/resources/rectangleCTX.xml</config>
+		<config>src/main/resources/seasonCTX.xml</config>
+		<config>src/main/resources/won2DollarCTX.xml</config>
+		<config>src/main/resources/threeCTX.xml</config>
+		<config>src/main/resources/rectangleCTX_2.xml</config>
+		<config>src/main/resources/medianCTX.xml</config>
+		<config>src/main/resources/evenNumberCTX.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
