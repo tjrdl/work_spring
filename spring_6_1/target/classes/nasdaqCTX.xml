@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="nasdaq1"  class = "com.lgy.spring_6_5.Nasddaq">
+	<constructor-arg value="Tesla"></constructor-arg>
+	<property name="rank" value="6"></property>
+	<property name="product">
+		<list>
+		<!-- value 값 입력에 소문자가 들어가면? 소문자로 시작하면? 에러 -->
+			<value>모델X</value>
+			<value>모델S</value>
+		</list>
+	</property>
+</bean>
+<bean id="nasdaqInfo1"  class="com.lgy.spring_6_5.NasdaqInfo">
+	<property name="nasdaq">
+			<ref bean="nasdaq1"/>
+		</property>
+</bean>
+
+</beans>
