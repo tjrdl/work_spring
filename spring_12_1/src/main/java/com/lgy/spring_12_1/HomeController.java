@@ -1,4 +1,4 @@
-package com.lgy.spring_ex11_2;
+package com.lgy.spring_12_1;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -35,29 +35,5 @@ public class HomeController {
 		
 		return "home";
 	}
-	@RequestMapping("trot/student")
-	public String trot1(Model model) {
-		model.addAttribute("id","youngwoong");
-		return "trot/student";
-	}
-	@RequestMapping("trot/admin")
-	public String trot2(Model model) {
-		model.addAttribute("id","boom");
-		return "trot/admin";
-	}
-	@RequestMapping("portpolio/airbnb")
-	public String airbnb(Model model) {
-		model.addAttribute("title","숙소예약");
-		return "portpolio/airbnb";
-	}
-	@RequestMapping("portpolio/universityManager")
-	public String university(Model model) {
-		model.addAttribute("title","학사관리");
-		return "portpolio/universityManager";
-	}
-	@RequestMapping("portpolio/bookManager")
-	public String Manager(Model model) {
-		model.addAttribute("title","도서관리");
-		return "portpolio/bookManager";
-	}
+	
 }
