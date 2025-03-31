@@ -35,5 +35,9 @@ public class HomeController {
 		
 		return "home";
 	}
+	@RequestMapping("car/tesla")
+	public String car() {
+		return "car/tesla";
+	}
 	
 }
