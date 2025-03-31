@@ -35,5 +35,16 @@ public class HomeController {
 		
 		return "home";
 	}
+
+	/* @RequestMapping("/view") */
+	@RequestMapping("board/view")
+	public String name() {
+		return "border/view";
+	}
 	
+	@RequestMapping("board/title")
+	public String title(Model model) {
+		model.addAttribute("id",30);
+		return "border/title";
+	}
 }
