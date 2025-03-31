@@ -41,6 +41,7 @@ public class HomeController {
 	@RequestMapping("/board/confirmId")
 	// httpServletRequest 객체에 url 파라미터 값을 담는다
 	public String confirmId(HttpServletRequest httpServletRequest, Model model) {
+		// 쿼리 스트링이 없는 경우 오류 발생 x
 		// url 파라미터 id 값을 가져옴
 		String id = httpServletRequest.getParameter("id");
 		String pw = httpServletRequest.getParameter("pw");
