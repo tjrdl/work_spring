@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -46,5 +47,18 @@ public class HomeController {
 	public String title(Model model) {
 		model.addAttribute("id",30);
 		return "border/title";
+	}
+	
+	@RequestMapping("board/reply")
+//	public String reply() {
+	// return 타입으로 Model과 View 사용 가능
+	public ModelAndView reply() {
+		ModelAndView mv = new ModelAndView();
+		//속성에 값 추가
+		mv.addObject("id","gildong");
+		//뷰 설정(model 객체와 차이점)
+		mv.setViewName("border/reply");
+		
+		return mv;
 	}
 }
