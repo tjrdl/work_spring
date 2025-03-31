@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Handles requests for the application home page.
  */
 @Controller
+@RequestMapping("/border")
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -37,33 +38,38 @@ public class HomeController {
 		return "home";
 	}
 
-	/* @RequestMapping("/view") */
-	@RequestMapping("board/view")
-	public String name() {
-		return "border/view";
-	}
-	
-	@RequestMapping("board/title")
-	public String title(Model model) {
-		model.addAttribute("id",30);
-		return "border/title";
-	}
-	
-	@RequestMapping("board/reply")
-//	public String reply() {
-	// return 타입으로 Model과 View 사용 가능
-	public ModelAndView reply() {
-		ModelAndView mv = new ModelAndView();
-		//속성에 값 추가
-		mv.addObject("id","gildong");
-		//뷰 설정(model 객체와 차이점)
-		mv.setViewName("border/reply");
-		
-		return mv;
-	}
-	@RequestMapping("shopping")
-	public String shopping() {
-		
-		return "border/shopping";
+//	/* @RequestMapping("/view") */
+//	@RequestMapping("board/view")
+//	public String name() {
+//		return "border/view";
+//	}
+//	
+//	@RequestMapping("board/title")
+//	public String title(Model model) {
+//		model.addAttribute("id",30);
+//		return "border/title";
+//	}
+//	
+//	@RequestMapping("board/reply")
+////	public String reply() {
+//	// return 타입으로 Model과 View 사용 가능
+//	public ModelAndView reply() {
+//		ModelAndView mv = new ModelAndView();
+//		//속성에 값 추가
+//		mv.addObject("id","gildong");
+//		//뷰 설정(model 객체와 차이점)
+//		mv.setViewName("border/reply");
+//		
+//		return mv;
+//	}
+//	@RequestMapping("shopping")
+//	public String shopping() {
+//		
+//		return "border/shopping";
+//	}
+	@RequestMapping("/write")
+	public String write(Model model) {
+		model.addAttribute("id","aaa");
+		return "border/write";
 	}
 }
