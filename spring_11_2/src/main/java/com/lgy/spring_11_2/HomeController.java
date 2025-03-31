@@ -61,4 +61,9 @@ public class HomeController {
 		
 		return mv;
 	}
+	@RequestMapping("shopping")
+	public String shopping() {
+		
+		return "border/shopping";
+	}
 }
