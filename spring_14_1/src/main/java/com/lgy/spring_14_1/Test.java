@@ -1,6 +1,6 @@
 package com.lgy.spring_14_1;
 
-import org.springframework.web.util.Log4jConfigListener;
+//import org.springframework.web.util.Log4jConfigListener;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
