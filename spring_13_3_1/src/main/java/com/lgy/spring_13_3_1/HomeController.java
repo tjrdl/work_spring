@@ -1,4 +1,4 @@
-package com.lgy.spring_13_2;
+package com.lgy.spring_13_3_1;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -8,8 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -36,11 +34,6 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
-				
 	}
-	@RequestMapping("/studentView")
-	// @ModelAttribute : 객체 이름 변경
-	public String studentView(@ModelAttribute("stuInfo") StudentInfomation stuInfo1) {
-		return "studentView";
-	}
+	
 }
