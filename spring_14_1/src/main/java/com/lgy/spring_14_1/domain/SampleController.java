@@ -12,14 +12,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lgy.spring_14_1.domain.SampleVO;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
 //@Controller
 @RestController // pom.xml 설정되어야 사용 가능
 @RequestMapping("/sample")
+@Slf4j
 public class SampleController {
 
 //   @GetMapping(value = "/getSample")
@@ -68,6 +74,13 @@ public class SampleController {
 		
 		
 		return new String[] {"category :"+cat,"product id : "+pid};
+	}
+	
+	@PostMapping("/ticket")
+//	@RequestBody : 전송된 json 데이터를 TicketVO 타입의 객체로 변환
+	public void convert(@RequestBody TicketVO ticketVO){
+		System.out.println("@# ticketVO=>"+ticketVO);
+		log.info("@# ticketVO=>"+ticketVO);
 	}
 
 }
