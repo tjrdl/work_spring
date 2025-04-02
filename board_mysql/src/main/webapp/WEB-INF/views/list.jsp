@@ -21,11 +21,16 @@
 		<tr>
 			<td>${dto.boardNo}</td>
 			<td>${dto.boardName}</td>
-			<td>${dto.boardTitle}</td>
+			<td>
+			<a href="content_view?boardNo=${dto.boardNo}">${dto.boardTitle}</a>
+			</td>
 			<td>${dto.boardDate}</td>
 			<td>${dto.boardHit}</td>
 		</tr>
 		</c:forEach>
+		<td colspan="5">
+		<a href="write_view">글작성</a>
+		</td>
 	</table>
 </body>
 </html>
