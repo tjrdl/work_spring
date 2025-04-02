@@ -78,9 +78,19 @@ public class SampleController {
 	
 	@PostMapping("/ticket")
 //	@RequestBody : 전송된 json 데이터를 TicketVO 타입의 객체로 변환
-	public void convert(@RequestBody TicketVO ticketVO){
+//	public void convert(@RequestBody TicketVO ticketVO){
+		public TicketVO convert(@RequestBody TicketVO ticketVO){
 		System.out.println("@# ticketVO=>"+ticketVO);
 		log.info("@# ticketVO=>"+ticketVO);
+		
+		return ticketVO;
+	}
+	@PostMapping("/info")
+	public MemberVO convert(@RequestBody MemberVO memberVO){
+		System.out.println("@# memberVO=>"+memberVO);
+		log.info("@# memberVO=>"+memberVO);
+		
+		return memberVO;
 	}
 
 }
