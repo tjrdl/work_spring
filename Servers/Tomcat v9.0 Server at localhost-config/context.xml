@@ -24,4 +24,5 @@
 		mayWaitMillis="10000" name="jdbc/mysql" password="1234"
 		type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/item_table"
 		username="bts" />
+		
 </Context>
