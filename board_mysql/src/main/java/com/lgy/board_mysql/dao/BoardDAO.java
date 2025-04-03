@@ -12,7 +12,10 @@ import javax.sql.DataSource;
 
 import com.lgy.board_mysql.dto.BoardDTO;
 
+import lombok.extern.slf4j.Slf4j;
+
 //DB SQL Ã³¸®
+@Slf4j
 public class BoardDAO {
 	DataSource dataSource;
 
@@ -173,5 +176,59 @@ public class BoardDAO {
 	            e2.printStackTrace();
 	         }
 	      }
+	   }
+	   
+	   public void modify(String boardNo, String boardName, String boardTitle, String boardContent) {
+		      Connection conn = null;
+		      PreparedStatement pstmt = null;
+		      String sql = "update tbl_board set boardName=?, boardTitle=?, boardContent=? where boardNo=?";
+
+		      try {
+		         conn = dataSource.getConnection();
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, boardName);
+		         pstmt.setString(2, boardTitle);
+		         pstmt.setString(3, boardContent);
+		         pstmt.setInt(4, Integer.parseInt(boardNo));
+		         pstmt.executeUpdate();
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      } finally {
+		         try {
+		            if (pstmt != null)
+		               pstmt.close();
+		            if (conn != null)
+		               conn.close();
+		         } catch (Exception e2) {
+		            e2.printStackTrace();
+		         }
+		      }
+	   }
+	  
+	   public void delete(String boardNo) {
+		   log.info("777");
+		   Connection conn = null;
+		      PreparedStatement pstmt = null;
+		      String sql = "delete from tbl_board where boardNo=?";
+
+		      try {
+		         conn = dataSource.getConnection();
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setInt(1, Integer.parseInt(boardNo));
+		         log.info(sql);
+		         pstmt.executeUpdate();
+		         
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      } finally {
+		         try {
+		            if (pstmt != null)
+		               pstmt.close();
+		            if (conn != null)
+		               conn.close();
+		         } catch (Exception e2) {
+		            e2.printStackTrace();
+		         }
+		      }
 	   }
 	}
